@@ -1,36 +1,27 @@
-//// Matheus Penteado e Kaik Persike
-/*TRABALHO PRÁTICO 03: Construir a classe Hora, conforme especificação
-abaixo, este exercício comporá a avaliação final, portanto será obrigatória sua
-elaboração para a prova final.
+/*
+Nome: Kaik Persike Maiorquino
+Prontuário: CB3029689
 
-• O construtor Hora() deve permitir ao usuário digitar os valores de hora, minuto e
-segundos e com eles inicializar os atributos da classe. Os valores digitados deverão ser
-consistidos e só aceitos se válidos, caso contrário, exigir ao usuário redigitar;
-• O construtor Hora(int h, int m, int s) deverá receber os valores de hora, minuto e
-segundos e com eles inicializa as propriedades da classe;
-• Os métodos setHor(int h), setMin(int m) e setSeg(int s) devem receber um valor e
-atribuí-lo ao respectivo atributo;
-• Os métodos setHor(), setMin() e setSeg() devem permitir que o usuário digite um
-valor e atribuí-lo ao respectivo atributo. Os valores digitados deverão ser consistidos e
-só aceitos se válidos, caso contrário, exigir ao usuário redigitar;
-• Os métodos getHor(), getMin() e getSeg() devem devolver as respectivas
-propriedades;
-• O método getHora1() deve nos devolver a hora no formato: hh:mm:ss;
-• O método getHora2() deve nos devolver a hora no formato: hh:mm:ss (AM/PM);
-• O método getSegundos() deve nos devolver a quantidade de segundos expressa na
-hora em questão, (exemplo: 01:00:01 = 3601 segundos) .
-• Conveniente colocar tratamento de exceção para as possíveis inconsistências na
-entrada de dados.
+Nome: Matheus Penteado de Barros
+Prontuário: CB3031501
+*/
 
-*/ 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
 package trabalhopratico03;
+
+/**
+ *
+ * @author Kaik
+ */
 public class TrabalhoPratico03 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Teste com entrada do usuário
         System.out.println("=== Teste com entrada do usuário ===");
         Hora hora1 = new Hora();  // Vai pedir os valores via teclado
         System.out.println("Hora 1 (formato 24h): " + hora1.getHora1());
@@ -39,7 +30,7 @@ public class TrabalhoPratico03 {
 
         // Teste com valores diretos
         System.out.println("\n=== Teste com valores diretos ===");
-        Hora hora2 = new Hora(14, 30, 45);  // Deveria ser 14:30:45
+        Hora hora2 = new Hora(27, 30, 99);  // Devera pedir ao usuario redigitar o 1º e 3º valores validos
         System.out.println("Hora 2 (formato 24h): " + hora2.getHora1());
         System.out.println("Hora 2 (formato 12h): " + hora2.getHora2());
         System.out.println("Hora 2 em segundos: " + hora2.getSegundos());
@@ -48,8 +39,15 @@ public class TrabalhoPratico03 {
         System.out.println("\n=== Teste de setters ===");
         hora2.setHor(22);
         hora2.setMin(59);
-        hora2.setSeg(59);
+        hora2.setSeg(89); // Devera pedir ao usuario redigitar
         System.out.println("Hora 2 atualizada (formato 24h): " + hora2.getHora1());
+        
+        // Teste dos setter para digitar o valor (vai pedir valores via teclado)
+        System.out.println("\n=== Teste de entrada dos setters ===");
+        hora2.setHor();
+        hora2.setMin();
+        hora2.setSeg();
+        System.out.println("Hora 2 atualizada novamente (formato 24h): " + hora2.getHora1());
     }
     
 }
